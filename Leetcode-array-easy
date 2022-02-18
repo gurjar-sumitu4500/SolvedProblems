@@ -1,0 +1,48 @@
+1.(1929) Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).Specifically, ans is the concatenation of two nums arrays.
+soln: 
+     class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return Integer[]
+     */
+    function getConcatenation($nums) {
+        $ans = array_merge($nums,$nums);
+        return $ans;
+     }   
+    }
+    
+2.(1920) Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]] for each 0 <= i < nums.length and return it. A zero-based permutation nums is an array of distinct integers from 0 to nums.length - 1 (inclusive).
+soln: 
+      class Solution {
+    /**
+     * @param Integer[] $nums
+     * @return Integer[]
+     */
+    function buildArray($nums) {
+        $ans = array();
+        for($x=0;$x<sizeof($nums);$x++){
+            array_push($ans,$nums[$nums[$x]]);
+        }
+        return $ans;
+        
+    }
+}
+
+3.(1480) Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]). Return the running sum of nums.
+soln: 
+     function runningSum($nums) {
+      $runningSum = array();
+        for($x = 0; $x<sizeof($nums);$x++){
+            if($x == 0){
+                array_push($runningSum,$nums[$x]);
+            }else{
+                $prev = $x - 1;
+                $sum = $nums[$x] + $runningSum[$prev];
+                array_push($runningSum,$sum);
+            }
+        }
+        print_r($runningSum);
+    }
+    
+ 4.()
+
